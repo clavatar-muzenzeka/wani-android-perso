@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#605f53</color>
+    <color name="primaryLightColor">#8d8c7f</color>
+    <color name="primaryDarkColor">#36352a</color>
+    <color name="secondaryColor">#f3d949</color>
+    <color name="secondaryLightColor">#ffff7c</color>
+    <color name="secondaryDarkColor">#bda805</color>
+    <color name="primaryTextColor">#777777</color>
+    <color name="primaryTextColorDark">#dddddd</color>
+    <color name="secondaryTextColor">#000000</color>
+    <color name="secondaryTextColorLight">#777777</color>
+    <color name="tertiaryTextColor">#CBCCC0</color>
+    <color name="tertiaryTextColorLight">#E7E8DD</color>
+    <color name="red">#b53d00</color>
+
+
+    <color name="backgroundColor">#F9F9F4</color>
+    <color name="surfaceColor">#fffff8</color>
+    <color name="defaultTextColor">#999999</color>
+    <color name="secondaryVeryDark">#919381</color>
+<color name="corpNorm">#a8aa93</color>
+    <color name="corpDark">#888b83</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="successColor">#289991</color>
+    <color name="pure_white">#ffffff</color>
+    <color name="colorKaminskyDivider">#E2E2E2</color>
+
+
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="finder_mask">#60000000</color>
+    <color name="rea">#ffff0000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+
+
+</resources>

@@ -1,0 +1,181 @@
+<resources>
+    <string name="app_name"><b>Wani</b></string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="menu_logout">Se déconnecter</string>
+    <string name="title_activity_login">Connexion</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in">Se connecter</string>
+    <string name="action_sign_in_short">Connexion</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_sign_up">Enregistrement</string>
+    <string name="action_sign_up">Soumettre</string>
+    <string name="prompt_name">Nom (*)</string>
+    <string name="prompt_tel">Tel</string>
+    <string name="label_doctor">Je suis un personnel soignant</string>
+    <string name="prompt_institution">Institution sanitaire</string>
+    <string name="dim_str">%spx</string>
+    <string name="prompt_select_program">Séléctionnez le jour et l\'heure</string>
+    <string name="text_btn_cancel">Annuler</string>
+    <string name="label_from_time">De</string>
+    <string name="label_to_time">à</string>
+    <string name="day">Jour</string>
+    <string name="hint_to">17h30</string>
+    <string name="hint_from">08h00</string>
+    <string name="action_define_prpgram">Ajouter</string>
+    <string name="label">Wani</string>
+    <string name="authority">cd.clavatar.wani</string>
+    <string name="account_type">wani</string>
+    <string name="hintInvalidLogin">Email ou Tel</string>
+    <string name="hintInvalidPassword">Au moins 4 caractères</string>
+    <string name="prompt_network_error">Un problème est survenu, verifiez votre connexion et recommencez</string>
+    <string name="prompt_user_not_found">Aucun utilisateur ne correspond à l\'identifiant fourni</string>
+    <string name="prompt_wrong_password">Le mot de passe saisi est incorrecte, il vous rest %s tentative</string>
+    <string name="prompt_wrong_password_overshooted">Nombre des tentatives dépassé</string>
+    <string name="prompt_wrong_password_simple">Mauvais mot de passe</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="prompt_loading">Chargement...</string>
+    <string name="prompt_about_to_synk">Abount to synk</string>
+    <string name="label_connexion_nfos">Informations de connexion</string>
+    <string name="label_other_infos">Autres</string>
+    <string name="prompt_email_or_number">Email ou Tel pour connexion</string>
+    <string name="prompt_password_confirm">Confirmer le mot de passe</string>
+    <string name="regex_email_or_phone"></string>
+    <string name="hint_email_or_number">Format attendu: Tel ou E-mail</string>
+    <string name="pompt_username_invalid">Un utilisateur existe dejà pour %s</string>
+    <string name="param_email_prompt_username_invalid">cet e-mail</string>
+    <string name="label_certif_covid"><b><i>Certificat COVID-19</i></b></string>
+    <string name="param_phone_prompt_username_invalid">ce numéro de téléphone</string>
+    <string name="prompt_password_dont_match">Les deux mots de passe ne correspondent pas</string>
+    <string name="promt_server_error">Quelque chose a mal tourné sur le serveur, veuillez reéssayer</string>
+    <string name="success">Reussite</string>
+    <string name="customSpinner">kaminskyThemeSpinner</string>
+    <string name="prompt_fill_tabag_form">Détermination du tabagisme</string>
+    <string name="label_period_tabag">J\'ai commencé à fumer</string>
+    <string name="hint_from_year">1980</string>
+    <string name="hint_to_year">2019</string>
+    <string name="label_now">Ce jour</string>
+    <string name="label_qty">Je fume en moyenne</string>
+    <string name="prompt_cigaret_number">0</string>
+    <string name="label_tabag_per_day">(Tiges par jour)</string>
+    <string name="action_validate_tabag_form">Valider</string>
+    <string name="kaminski_sex_qualification">Sex</string>
+    <string name="kaminski_ATCD_qualification">Antécédents familliaux</string>
+    <string name="kaminski_age_qualification">Age</string>
+    <string name="kaminski_tabagisme_qualification">Tabagisme</string>
+    <string name="kaminski_imc_qualification">Indice de masse corporelle</string>
+    <string name="spinner_sex_prompt">\?</string>
+    <string name="month_placeholder">Mois...</string>
+    <string name="year_placeholder">AAAA</string>
+    <string name="hint_year_invalid">Année invalid</string>
+    <string name="hint_year_four">4 caractères</string>
+    <string name="label_period_invalid">La date de début doit être inférieure à la date de fin</string>
+    <string name="label_no_tabac">Je n\'ai jamais fumé</string>
+    <string name="prompt_fill_imc_form">Détermination de l\'indice de masse corporelle</string>
+    <string name="taill_placeholder">Taille (Cm)</string>
+    <string name="weigt_placeholder">Poids (Kg)</string>
+    <string name="prompt_fill_atcd_form">Détermination des antécédents familliaux</string>
+    <string name="no_atcd">Aucun membre de ma famille restreinte n\'a eu à soufir d\'un cancer colorectal ou apparenté</string>
+    <string name="atcd_one_old">Un membre de ma famille restreinte eu à soufir d\'un cancer colorectal ou apparenté <strong>après la soixantaine</strong></string>
+    <string name="atcd_one_young">Un membre de ma famille restreinte eu à soufir d\'un cancer colorectal ou apparenté <strong>avant la soixantaine</strong></string>
+    <string name="atcd_two">Deux membres de ma famille restreinte ont eu à soufir d\'un cancer colorectal ou apparenté</string>
+    <string name="neglectible_risk">- Risque négligeable</string>
+    <string name="hight_risk">- Examen requis</string>
+    <string name="title_activity_main">Derniers enregistrements</string>
+    <string name="prompt_adress">Adresse</string>
+    <string name="prompt_adress_province">Province</string>
+    <string name="prompt_adress_city">Ville</string>
+    <string name="prompt_adress_township">Commune</string>
+    <string name="prompt_adress_locality">Quartier</string>
+    <string name="prompt_adress_road">Avenue</string>
+    <string name="prompt_adress_number">N°</string>
+
+
+    <string name="codebar_scan">Scanning</string>
+    <string name="scan_text">Put the code into the frame and\n wait for the result.</string>
+    <string name="album">album</string>
+    <string name="more_config">More Configuration</string>
+    <string name="picture_ppi">Preview Size</string>
+    <string name="scan_ok_play_sound">Voice Prompt Scanning</string>
+    <string name="scan_ok_play_vibrate">Shake After Scanning</string>
+    <string name="identify_inverse_qr_code">Identification Invert Color Code</string>
+    <string name="identify_more_code">Identify Several Code</string>
+    <string name="ppi">Resolution</string>
+    <string name="start_scan">Open The Scanner</string>
+    <string name="scan_result">Scan Results：</string>
+    <string name="scan_type">Scan Type：%s</string>
+    <string name="scan_string">Results：%s</string>
+
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="ok">OK</string>
+    <string name="prompt_network_error_refresh">Problème de connexion, appuyez le button ci-dessous pour reéssayer</string>
+
+    <string name="prompt_username">Nom d\'utilisateur</string>
+    <!-- QR Code related strings -->
+    <string name="text_nfc_cancel">Abandonner</string>
+    <string name="nfc_scan_explannation">Accollez la partie du carnet qui contient le tag NFC au dos du POS en regard de sa pertie proéminete. Vous pouvez ajuster doucement la position jusqu\'à la lecture du code.</string>
+    <string-array name="days">
+        <item>Lun.</item>
+        <item>Mar.</item>
+        <item>Mer.</item>
+        <item>Jeu.</item>
+        <item>Ven.</item>
+        <item>Sam.</item>
+        <item>Dim.</item>
+    </string-array>
+    <string-array name="sex">
+        <item>H</item>
+        <item>F</item>
+    </string-array>
+    <string-array name="age">
+        <item>40-49 (ans)</item>
+        <item>50-54 (ans)</item>
+        <item>55-59 (ans)</item>
+        <item>60 ans et +</item>
+    </string-array>
+    <string-array name="ATCD">
+        <item>Aucun</item>
+        <item>Fam. élargie</item>
+        <item>Fam. retreinte</item>
+    </string-array>
+    <string-array name="months">
+
+        <item>Mois...</item>
+        <item>Janvier</item>
+        <item>Février</item>
+        <item>Mars</item>
+        <item>Avril</item>
+        <item>Mai</item>
+        <item>Juin</item>
+        <item>Juillet</item>
+        <item>Aôut</item>
+        <item>Septembre</item>
+        <item>Octobre</item>
+        <item>Novembre</item>
+        <item>Décembre</item>
+    </string-array>
+    <string-array name="nationality">
+        <item>National</item>
+        <item>Expatrié</item>
+    </string-array>
+</resources>

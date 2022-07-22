@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:id="@+id/grpmain">
+        <item
+
+            android:id="@+id/nav_stori"
+            android:icon="@drawable/ic_history_black_24dp"
+            android:title="Historique"
+            android:enabled="true"/>
+        <item
+
+            android:id="@+id/nav_paiement"
+            android:icon="@drawable/ic_monetization_on_black_24dp"
+            android:title="Compte"
+            android:enabled="true"/>
+
+    </group>
+    <group android:id="@+id/grpaccount">
+        <item
+
+            android:id="@+id/nav_user"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="Mon profile"
+            android:enabled="true"/>
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/menu_logout"
+            android:enabled="true"/>
+
+    </group>
+
+</menu>

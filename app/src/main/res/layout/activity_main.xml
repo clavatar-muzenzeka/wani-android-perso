@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="cd.clavatar.wani.ui.main.MainViewModel" />
+        <import type="android.view.View"/>
+        <import type="cd.clavatar.wani.vendor.CompactCarnetViewModel"/>
+        <import type="cd.clavatar.wani.ui.main.MainViewModel"/>
+        <import type="cd.clavatar.wani.WaniApp"/>
+        <import type="cd.clavatar.wani.utilities.Common" />
+
+    </data>
+    <androidx.drawerlayout.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:id="@+id/activity_main_frame_layout"
+                    android:layout_width="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@color/backgroundColor"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_height="0dp">
+                    <LinearLayout
+                        android:id="@+id/wrap"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <FrameLayout
+
+                            android:visibility="@{Common.backgroundWork?View.VISIBLE:View.GONE}"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp">
+                            <ProgressBar
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:id="@+id/loading"
+                                android:layout_width="match_parent"
+                                android:layout_height="32dp"
+                                android:layout_gravity="center"
+
+                                android:indeterminate="true" />
+                        </FrameLayout>
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:id="@+id/title"
+                        android:background="@color/primaryDarkColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="82dp"
+                        app:layout_constraintTop_toBottomOf="@+id/wrap"
+                        android:elevation="8dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginLeft="72dp"
+                            android:textSize="22dp"
+                            android:text="@string/app_name"
+                            android:textColor="@color/pure_white"/>
+
+                        <LinearLayout
+                            android:background="@color/primaryDarkColor"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_alignParentBottom="true"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:id="@+id/icon_menu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:tint="#ffffff"
+                                android:layout_marginLeft="8dp"
+                                android:layout_gravity="center_vertical"
+                                app:srcCompat="@drawable/ic_menu_black_24dp"
+                                />
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+
+                                android:layout_gravity="center_vertical"
+                                >
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:visibility="@{model.currentMenu==MainViewModel.STORY &amp;&amp;model.serachMode  ?View.GONE:View.VISIBLE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        app:layout_constraintBaseline_toBaselineOf="parent"
+                                        android:layout_weight="4"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@{model.currentMenu==MainViewModel.STORY ? `Historique` : `Comptes` }"
+                                        app:layout_constraintWidth_percent="0.6"
+                                        android:lines="1"
+                                        android:ellipsize="end"
+                                        android:textColor="@color/primaryLightColor"
+                                        android:layout_marginTop="6dp"
+                                        android:textSize="20dp"/>
+
+                                    <ImageView
+                                        android:visibility="@{model.currentMenu==MainViewModel.STORY?View.VISIBLE:View.GONE}"
+                                        app:layout_constraintBaseline_toBaselineOf="parent"
+                                        app:layout_constraintRight_toLeftOf="@id/iv_search"
+                                        android:layout_gravity="right"
+                                        android:id="@+id/iv_scan"
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:tint="#ffffff"
+                                        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                                        app:srcCompat="@drawable/ic_qr_code"
+                                        />
+                                    <ImageView
+                                        android:visibility="@{model.currentMenu==MainViewModel.STORY?View.VISIBLE:View.GONE}"
+                                        app:layout_constraintBaseline_toBaselineOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        android:layout_gravity="right"
+                                        android:id="@+id/iv_search"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:tint="#ffffff"
+                                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                        app:srcCompat="@drawable/ic_search_black_24dp"
+                                        />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                                <LinearLayout
+                                    android:visibility="@{model.currentMenu == MainViewModel.PAIEMENT? View.VISIBLE:View.GONE}"
+                                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    android:orientation="horizontal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/primaryTextColorDark"
+                                        android:text="Plafond"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/activity_horizontal_margin_moderate"
+                                        android:textColor="@color/secondaryColor"
+                                        android:textSize="16dp"
+                                        android:text="@{String.valueOf(WaniApp.parameter.maxAccount).concat(` USD`)}"/>
+
+                                </LinearLayout>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:visibility="@{model.currentMenu == MainViewModel.STORY &amp;&amp;model.serachMode? View.VISIBLE:View.GONE}"
+                                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <FrameLayout
+                                        android:layout_width="match_parent"
+                                        app:layout_constraintBaseline_toBaselineOf="parent"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        android:layout_height="match_parent">
+                                        <EditText
+
+                                            android:layout_width="match_parent"
+                                            android:background="@drawable/background_edit_text"
+                                            android:layout_height="wrap_content"
+                                            android:hint="Nom, Post-nom ou prenom"
+                                            android:text="@={model.filterValue}"
+                                            android:paddingLeft="12dp"
+                                            android:paddingRight="40dp"
+                                            android:paddingBottom="6dp"
+                                            android:paddingTop="2dp"
+                                            android:textColor="#ffffff"
+                                            android:textColorHint="@color/primaryLightColor"/>
+                                        <ImageView
+                                            android:layout_gravity="right"
+                                            android:id="@+id/iv_undo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:tint="#ffffff"
+                                            android:layout_marginTop="2dp" android:layout_marginRight="@dimen/activity_horizontal_margin_moderate"
+                                            app:srcCompat="@drawable/ic_clear_black_24dp"
+                                            />
+                                    </FrameLayout>
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </FrameLayout>
+
+
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <FrameLayout
+                        app:layout_constraintTop_toBottomOf="@id/title"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:visibility="@{model.currentMenu==MainViewModel.STORY? View.VISIBLE:View.GONE}"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:orientation="vertical"
+                            >
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:visibility="@{model.carnets.size() ==0?View.GONE:View.VISIBLE}"
+                                app:dataSource="@{model.carnets}"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:visibility="@{model.carnets.size() ==0? View.VISIBLE:View.GONE}"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <LinearLayout
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    android:layout_width="0dp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    android:layout_height="wrap_content"
+                                    app:layout_constraintWidth_percent="0.5"
+                                    android:paddingVertical="@dimen/activity_horizontal_margin"
+                                    android:orientation="vertical"
+                                    android:layout_gravity="center">
+                                    <ImageView
+                                        android:layout_width="72dp"
+                                        android:layout_height="72dp"
+                                        android:layout_gravity="center"
+                                        android:tint="@color/secondaryTextColorLight"
+                                        android:src="@drawable/ic_block_black_24dp"/>
+                                    <TextView
+                                        android:layout_marginTop="@dimen/activity_horizontal_margin_moderate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:textAlignment="center"
+                                        android:layout_height="wrap_content"
+                                        android:text="Aucun élément à afficher pour l'instant"/>
+
+                                </LinearLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="@{model.currentMenu==MainViewModel.PAIEMENT? View.VISIBLE:View.GONE}"
+                            android:orientation="vertical"
+                            >
+                            <FrameLayout
+                                android:id="@+id/header"
+                                app:layout_constraintTop_toBottomOf="@id/title"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:background="@color/secondaryVeryDark"
+                                >
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                    <LinearLayout
+                                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                        android:id="@+id/account"
+                                        app:layout_constraintRight_toRightOf="parent"
+
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <TextView
+                                            android:layout_gravity="right"
+                                            android:gravity="right"
+                                            android:textAlignment="gravity"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/primaryTextColorDark"
+                                            android:text="Compte"/>
+                                        <TextView
+                                            android:layout_gravity="right"
+                                            android:gravity="right"
+                                            android:textAlignment="gravity"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/secondaryColor"
+                                            android:textSize="24dp"
+                                            android:text="@{model.account +` USD`}"/>
+
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </FrameLayout>
+
+                            <LinearLayout
+                                app:layout_constraintTop_toBottomOf="@+id/subheader"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_width="match_parent"
+
+                                android:orientation="vertical"
+                                android:layout_height="match_parent">
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:visibility="@{model.paiments.size() ==0? View.GONE:View.VISIBLE}"
+                                    app:dataSourceP="@{model.paiments}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:visibility="@{model.paiments.size() ==0? View.VISIBLE:View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                    <LinearLayout
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        android:layout_width="0dp"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        android:layout_height="wrap_content"
+                                        app:layout_constraintWidth_percent="0.5"
+                                        android:paddingVertical="@dimen/activity_horizontal_margin"
+                                        android:orientation="vertical"
+                                        android:layout_gravity="center">
+                                        <ImageView
+                                            android:layout_width="72dp"
+                                            android:layout_height="72dp"
+                                            android:layout_gravity="center"
+                                            android:tint="@color/secondaryTextColorLight"
+                                            android:src="@drawable/ic_block_black_24dp"/>
+                                        <TextView
+                                            android:layout_marginTop="@dimen/activity_horizontal_margin_moderate"
+                                            android:layout_width="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:textAlignment="center"
+                                            android:layout_height="wrap_content"
+                                            android:text="Aucun élément à afficher pour l'instant"/>
+
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </FrameLayout>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:visibility="@{model.currentMenu==MainViewModel.STORY ? View.VISIBLE:View.GONE}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:orientation="vertical"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:paddingBottom="8dp"
+                android:layout_gravity="right|bottom">
+                <LinearLayout
+                    android:visibility="@{CompactCarnetViewModel.getSelectedId == null ? View.GONE:View.VISIBLE}"
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp">
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fab_cancel"
+                        android:onClick="@{model.cancelSelectViewListener}"
+                        android:clipChildren="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/ic_undo_black_24dp"
+                        android:tint="@color/primaryColor"
+                        app:fabSize="mini"
+                        android:layout_marginBottom="8dp"
+                        android:elevation="8dp"
+                        app:backgroundTint="@color/primaryTextColor"/>
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:visibility="@{((model.getCarnetByLocaleId(CompactCarnetViewModel.selectedId).carnetStatus.typeStatus==2) || WaniApp.logedInUser.role.compareTo(`Controler`)==0)? View.GONE:View.VISIBLE}"
+                        android:id="@+id/fab_duplicate"
+                        android:onClick="@{model.btnDuplicataClickListener}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/ic_visibility_black_24dp"
+                        android:tint="@color/primaryColor"
+                        app:fabSize="mini"
+                        android:elevation="8dp"
+                        app:backgroundTint="@color/primaryTextColor"/>
+                </LinearLayout>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:clipChildren="false"
+                    android:onClick="@{model.validateButonClickHandler}"
+                    android:id="@+id/fab_validate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_add_black_24dp"
+                    android:tint="@color/primaryColor"
+                    android:layout_margin="@dimen/activity_horizontal_margin_moderate"
+                    app:fabSize="normal"
+                    android:layout_gravity="right|bottom"
+                    android:elevation="8dp"
+                    app:backgroundTint="@color/secondaryDarkColor"/>
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_main"
+            app:menu="@menu/activity_main_drawer" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="cd.clavatar.wani.vendor.IssueViewModel" />
+        <import type="android.view.View"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="72dp" >
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="71dp" >
+            <FrameLayout
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center_vertical|right"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/picture"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:tint="@color/secondaryColor"
+                    android:tintMode="src_in"
+                    android:src="@drawable/ic_warning_black_24dp"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginVertical="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="@{model.issue}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="11dp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/secondaryTextColor"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

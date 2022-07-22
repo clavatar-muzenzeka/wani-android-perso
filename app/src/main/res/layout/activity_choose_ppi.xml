@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="com.sunmi.codescanner.activity.ChoosePPIActivity">
+
+    <include
+        layout="@layout/activity_title"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp" />
+
+    <RelativeLayout
+        android:id="@+id/select_one_block"
+        style="@style/item_block_style">
+
+        <TextView
+            style="@style/normal_text"
+            android:layout_centerVertical="true"
+            android:text="640*480" />
+
+        <ImageView
+            android:id="@+id/select_one"
+            style="@style/selected_img_style"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View style="@style/line_style" />
+
+    <RelativeLayout
+        android:id="@+id/select_two_block"
+        style="@style/item_block_style">
+
+        <TextView
+            style="@style/normal_text"
+            android:layout_centerVertical="true"
+            android:text="160*120" />
+
+        <ImageView
+            android:id="@+id/select_two"
+            style="@style/selected_img_style"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View style="@style/line_style" />
+
+    <RelativeLayout
+        android:id="@+id/select_three_block"
+        style="@style/item_block_style">
+
+        <TextView
+            style="@style/normal_text"
+            android:layout_centerVertical="true"
+            android:text="176*144" />
+
+        <ImageView
+            android:id="@+id/select_three"
+            style="@style/selected_img_style"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View style="@style/line_style" />
+
+    <RelativeLayout
+        android:id="@+id/select_four_block"
+        style="@style/item_block_style">
+
+        <TextView
+            style="@style/normal_text"
+            android:layout_centerVertical="true"
+            android:text="320*240" />
+
+        <ImageView
+            android:id="@+id/select_four"
+            style="@style/selected_img_style"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View style="@style/line_style" />
+
+    <RelativeLayout
+        android:id="@+id/select_five_block"
+        style="@style/item_block_style">
+
+        <TextView
+            style="@style/normal_text"
+            android:layout_centerVertical="true"
+            android:text="352*288" />
+
+        <ImageView
+            android:id="@+id/select_five"
+            style="@style/selected_img_style"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        style="@style/line_style"
+        android:layout_margin="0dp"
+        android:background="#33000000" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f0f0f0" />
+</LinearLayout>

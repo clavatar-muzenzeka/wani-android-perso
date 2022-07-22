@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffffff"
+              android:orientation="vertical"
+              tools:context="com.sunmi.codescanner.activity.SettingsActivity">
+
+    <include
+        layout="@layout/activity_title"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"/>
+
+    <ScrollView
+        android:id="@+id/activity_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <RelativeLayout style="@style/item_block_style">
+
+                <TextView
+                    style="@style/normal_text"
+                    android:layout_centerVertical="true"
+                    android:text="@string/picture_ppi"/>
+
+                <ImageView
+                    android:id="@+id/next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/enter"/>
+
+                <TextView
+                    android:id="@+id/current_ppi"
+                    style="@style/normal_text"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/next"
+                    android:padding="10dp"
+                    android:text="800*480"/>
+            </RelativeLayout>
+
+            <View style="@style/line_style"/>
+
+            <RelativeLayout style="@style/item_block_style">
+
+                <TextView
+                    style="@style/normal_text"
+                    android:layout_centerVertical="true"
+                    android:text="@string/scan_ok_play_sound"/>
+
+                <Switch
+                    android:id="@+id/play_sound"
+                    style="@style/switch_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"/>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/vibrate_block_line"
+                style="@style/line_style"/>
+
+            <RelativeLayout
+                android:id="@+id/vibrate_block"
+                style="@style/item_block_style">
+
+                <TextView
+                    style="@style/normal_text"
+                    android:layout_centerVertical="true"
+                    android:text="@string/scan_ok_play_vibrate"/>
+
+                <Switch
+                    android:id="@+id/play_vibrate"
+                    style="@style/switch_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="false"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/line_style"
+                android:layout_margin="0dp"
+                android:background="#33000000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="#f0f0f0"/>
+
+            <RelativeLayout style="@style/item_block_style">
+
+                <TextView
+                    style="@style/normal_text"
+                    android:layout_centerVertical="true"
+                    android:text="@string/identify_inverse_qr_code"/>
+
+                <Switch
+                    android:id="@+id/inverse_qr_code"
+                    style="@style/switch_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"/>
+            </RelativeLayout>
+
+            <View style="@style/line_style"/>
+
+            <RelativeLayout style="@style/item_block_style">
+
+                <TextView
+                    style="@style/normal_text"
+                    android:layout_centerVertical="true"
+                    android:text="@string/identify_more_code"/>
+
+                <Switch
+                    android:id="@+id/identify_more_code"
+                    style="@style/switch_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="false"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/line_style"
+                android:layout_margin="0dp"
+                android:background="#33000000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="#f0f0f0"/>
+
+            <RelativeLayout
+                style="@style/item_block_style"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/normal_text"
+                    android:layout_centerVertical="true"
+                    android:text="扫码模式"/>
+
+                <Spinner
+                    android:id="@+id/scan_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true">
+                </Spinner>
+            </RelativeLayout>
+
+            <View style="@style/line_style"/>
+
+            <RelativeLayout
+                style="@style/item_block_style"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/normal_text"
+                    android:layout_centerVertical="true"
+                    android:text="灯索引"/>
+
+                <Spinner
+                    android:id="@+id/light_index"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true">
+                </Spinner>
+            </RelativeLayout>
+
+            <View style="@style/line_style"/>
+
+            <RelativeLayout style="@style/item_block_style">
+
+                <TextView
+                    style="@style/normal_text"
+                    android:layout_centerVertical="true"
+                    android:text="指示灯"/>
+
+                <Spinner
+                    android:id="@+id/is_open_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true">
+                </Spinner>
+            </RelativeLayout>
+
+            <View style="@style/line_style"/>
+
+            <RelativeLayout style="@style/item_block_style">
+
+                <TextView
+                    style="@style/normal_text"
+                    android:layout_centerVertical="true"
+                    android:text="灯亮时间"/>
+
+                <TextView
+                    android:id="@+id/light_bright_time_unit"
+                    style="@style/normal_text"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="5dp"
+                    android:text="单位:毫秒"/>
+
+                <EditText
+                    android:id="@+id/light_bright_time"
+                    android:layout_width="120dp"
+                    android:layout_height="54dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/light_bright_time_unit"
+                    android:background="@drawable/edittext"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:singleLine="true"
+                    android:textColor="#393939"
+                    android:textSize="24dp"/>
+            </RelativeLayout>
+
+            <View style="@style/line_style"/>
+
+            <RelativeLayout style="@style/item_block_style">
+
+                <TextView
+                    style="@style/normal_text"
+                    android:layout_centerVertical="true"
+                    android:text="灯灭时间"/>
+
+                <TextView
+                    android:id="@+id/light_drown_time_unit"
+                    style="@style/normal_text"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="5dp"
+                    android:text="单位:毫秒"/>
+
+                <EditText
+                    android:id="@+id/light_drown_time"
+                    android:layout_width="120dp"
+                    android:layout_height="54dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/light_drown_time_unit"
+                    android:background="@drawable/edittext"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:singleLine="true"
+                    android:textColor="#393939"
+                    android:textSize="24dp"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/line_style"
+                android:layout_margin="0dp"
+                android:background="#33000000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f0f0f0"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
